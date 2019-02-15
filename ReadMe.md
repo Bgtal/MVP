@@ -1,5 +1,7 @@
-# MVP
-> com.blq.ssnb:mvp:1.0.0
+# MVP [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+> maven { url 'https://jitpack.io' }  
+> 使用 support包 com.github.Bgtal:MVP:1.0.0   
+> 使用 androidx包 com.github.Bgtal:MVP:x1.0.0  
 ## 类结构
 ```
 |blq
