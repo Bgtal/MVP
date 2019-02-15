@@ -1,10 +1,11 @@
 package blq.ssnb.mvp;
 
 
+import android.arch.lifecycle.LifecycleOwner;
+import android.support.annotation.NonNull;
+
 import java.lang.ref.WeakReference;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.LifecycleOwner;
 
 /**
  * <pre>

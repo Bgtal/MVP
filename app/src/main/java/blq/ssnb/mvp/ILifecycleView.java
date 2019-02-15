@@ -1,7 +1,7 @@
 package blq.ssnb.mvp;
 
 
-import androidx.lifecycle.LifecycleOwner;
+import android.arch.lifecycle.LifecycleOwner;
 
 /**
  * <pre>
