@@ -1,8 +1,24 @@
 # MVP [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
-> maven { url 'https://jitpack.io' }  
-> 使用 support包 com.github.Bgtal:MVP:1.0.0   
-> 使用 androidx包 com.github.Bgtal:MVP:x1.0.0  
+> maven
+```  
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+        ...
+    }
+}
+```
+> 使用 support包请依赖 com.github.Bgtal:MVP:1.0.0   
+
+> 使用 androidx包请依赖 com.github.Bgtal:MVP:x1.0.0   
+## 项目依赖
+#### support 包
+>  'android.arch.lifecycle:common:1.1.1'  
+#### androidx 包
+>  'androidx.lifecycle:lifecycle-common:2.0.0'
 ## 类结构
+
 ```
 |blq
 |---ssnb
