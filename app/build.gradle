@@ -19,5 +19,5 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.lifecycle:lifecycle-common:2.0.0'
+    compileOnly 'androidx.lifecycle:lifecycle-common:2.0.0'
 }
