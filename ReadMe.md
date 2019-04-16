@@ -9,9 +9,9 @@ allprojects {
     }
 }
 ```
-> 使用 support包请依赖 com.github.Bgtal:MVP:1.0.0   
+> 使用 support包请依赖 com.github.Bgtal:MVP:1.0.1   
 
-> 使用 androidx包请依赖 com.github.Bgtal:MVP:x1.0.0   
+> 使用 androidx包请依赖 com.github.Bgtal:MVP:x1.0.1   
 ## 项目依赖
 #### support 包
 >  'android.arch.lifecycle:common:1.1.1'  
