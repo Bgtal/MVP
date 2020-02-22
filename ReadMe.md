@@ -1,4 +1,4 @@
-# MVP [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
+# MVP [![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)  [![](https://jitpack.io/v/Bgtal/MVP.svg)](https://jitpack.io/#Bgtal/MVP)
 > maven
 ```  
 allprojects {
@@ -9,14 +9,14 @@ allprojects {
     }
 }
 ```
-> 使用 support包请依赖 com.github.Bgtal:MVP:1.0.0   
+> 使用 support包请依赖 com.github.Bgtal:MVP:1.0.1   
 
-> 使用 androidx包请依赖 com.github.Bgtal:MVP:x1.0.0   
+> 使用 androidx包请依赖 com.github.Bgtal:MVP:x1.0.2   
 ## 项目依赖
 #### support 包
->  'android.arch.lifecycle:common:1.1.1'  
+>  implementation 'android.arch.lifecycle:common:1.1.1'  
 #### androidx 包
->  'androidx.lifecycle:lifecycle-common:2.0.0'
+>  implementation 'androidx.lifecycle:lifecycle-common:2.2.0'
 
 ## 类结构
 ```
@@ -25,7 +25,6 @@ allprojects {
 |-------mvp
 |----------BasePresent.java
 |----------MvpCallBack.java
-|----------MvpCallBack2.java
 |----------IAttachOrDetacheListener.java
 |----------ILifecycleModel.java
 |----------ILifecycleView.java
@@ -107,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements LoginContract.ILo
     }
 
     @Override
-    public void onLoginFail(String failMsg) {
-        Log.e("MVP","登录失败："+failMsg);
+    public void onLoginFail(int errorCode ,String failMsg) {
+        Log.e("MVP","登录失败："+errorCode+"-"+failMsg);
     }
 
     //===================如果没有添加生命周期监听的话那么就需要手动调用detach()方法来清空view和model

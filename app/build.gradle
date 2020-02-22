@@ -6,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 10
-        versionName "1.0.0"
+        versionCode 11
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -19,5 +19,5 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compileOnly 'androidx.lifecycle:lifecycle-common:2.0.0'
+    compileOnly 'androidx.lifecycle:lifecycle-common:2.2.0'
 }
