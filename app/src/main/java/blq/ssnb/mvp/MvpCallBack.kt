@@ -24,5 +24,5 @@ interface MvpCallBack<T> {
      * @param errorCode 错误code
      * @param msg 失败信息
      */
-    fun onFail(errorCode: Int, msg: String?)
+    fun onFail(errorCode: Int, msg: String)
 }
