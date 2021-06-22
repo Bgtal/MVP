@@ -1,5 +1,4 @@
-package blq.ssnb.mvp;
-
+package blq.ssnb.mvp
 
 /**
  * <pre>
@@ -11,19 +10,19 @@ package blq.ssnb.mvp;
  * 描述:
  * 在MVP中 用于 P 调用 M 后的回调
  * ================================================
- * </pre>
+</pre> *
  */
-public interface MvpCallBack<T> {
+interface MvpCallBack<T> {
     /**
      * 回调成功
      * @param backData 回调成功的对象
      */
-    void onSuccess(T backData);
+    fun onSuccess(backData: T)
 
     /**
      * 回调失败
      * @param errorCode 错误code
      * @param msg 失败信息
      */
-    void onFail(int errorCode,String msg);
+    fun onFail(errorCode: Int, msg: String?)
 }

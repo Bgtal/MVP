@@ -1,4 +1,4 @@
-package blq.ssnb.mvp;
+package blq.ssnb.mvp
 
 /**
  * <pre>
@@ -10,16 +10,16 @@ package blq.ssnb.mvp;
  * 描述:
  * 绑定和解绑监听
  * ================================================
- * </pre>
+</pre> *
  */
-public interface IAttachOrDetachListener {
+interface IAttachOrDetachListener {
     /**
      * 绑定的时候需要调用该方法
      */
-    void onMvpAttach();
+    fun onMvpAttach()
 
     /**
      * 解绑的时候需要调用该方法
      */
-    void onMvpDetach();
+    fun onMvpDetach()
 }

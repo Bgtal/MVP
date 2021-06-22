@@ -1,11 +1,8 @@
-package blq.ssnb.mvp;
+package blq.ssnb.mvp
 
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 
 /**
  * <pre>
@@ -15,41 +12,38 @@ import androidx.lifecycle.OnLifecycleEvent;
  * 邮箱: blq_ssnb@outlook.com
  * 修改次数: 1
  * 描述:
- * MVP 中的 P 父类 继承 {@link LifecycleObserver}
+ * MVP 中的 P 父类 继承 [LifecycleObserver]
  * ================================================
- * </pre>
+</pre> *
  */
-public interface IPresenter<V extends IView,M extends IModel> extends LifecycleObserver {
-
+interface IPresenter<V : IView?, M : IModel?> : LifecycleObserver {
     /**
      * 初始化 model
      * @return 返回model类
      */
-    @NonNull
-    M initModel();
+    fun initModel(): M
+
     /**
      * 获取model对象
      * @return Model 对象
      */
-    @NonNull
-    M getModel();
+    val model: M
 
     /**
      * 获得 绑定的View
      * @return 绑定的view
      */
-    @Nullable
-    V getView();
+    val view: V?
 
     /**
      * 绑定view
      * @param view P 需要绑定的view
      */
-    void attach(@NonNull V view);
+    fun attach(view: V)
 
     /**
      * 解绑
      */
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    void detach();
+    fun detach()
 }

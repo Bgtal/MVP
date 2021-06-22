@@ -1,7 +1,4 @@
-package blq.ssnb.mvp;
-
-
-import androidx.lifecycle.LifecycleOwner;
+package blq.ssnb.mvp
 
 /**
  * <pre>
@@ -11,8 +8,8 @@ import androidx.lifecycle.LifecycleOwner;
  * 邮箱: blq_ssnb@outlook.com
  * 修改次数: 1
  * 描述:
- * 带有生命周期监听的 MVP-V类
+ * MVP 中的 M 父类
  * ================================================
- * </pre>
+</pre> *
  */
-public interface ILifecycleView extends IView,LifecycleOwner,IAttachOrDetachListener {}
+interface IModel 

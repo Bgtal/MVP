@@ -1,4 +1,4 @@
-package blq.ssnb.mvp;
+package blq.ssnb.mvp
 
 /**
  * <pre>
@@ -10,6 +10,6 @@ package blq.ssnb.mvp;
  * 描述:
  * MVP 中的 V 父类
  * ================================================
- * </pre>
+</pre> *
  */
-public interface IView {}
+interface IView 
