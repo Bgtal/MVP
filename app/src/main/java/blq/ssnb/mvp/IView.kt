@@ -1,5 +1,7 @@
 package blq.ssnb.mvp
 
+import androidx.lifecycle.LifecycleOwner
+
 /**
  * <pre>
  * ================================================
@@ -12,4 +14,6 @@ package blq.ssnb.mvp
  * ================================================
 </pre> *
  */
-interface IView 
+interface IView
+
+interface ILifecycleView : IView, LifecycleOwner, IAttachOrDetachListener

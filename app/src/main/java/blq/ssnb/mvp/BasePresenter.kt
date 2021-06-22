@@ -16,6 +16,7 @@ import java.lang.ref.WeakReference
 </pre> *
  */
 abstract class BasePresenter<V : IView?, M : IModel?> : IPresenter<V, M> {
+
     private var mViewWeakReference: WeakReference<V>? = null
     private var mModel: M? = null
     override val model: M
@@ -23,28 +24,26 @@ abstract class BasePresenter<V : IView?, M : IModel?> : IPresenter<V, M> {
             if (mModel == null) {
                 mModel = initModel()
             }
-            return mModel
+            return mModel!!
         }
     override val view: V?
-        get() = if (mViewWeakReference != null) {
-            mViewWeakReference!!.get()
-        } else null
+        get() = mViewWeakReference?.get()
 
     override fun attach(view: V) {
-        mViewWeakReference = if (mViewWeakReference == null) {
-            WeakReference(view)
-        } else {
-            if (view != null && view is IAttachOrDetachListener) {
-                (view as IAttachOrDetachListener).onMvpDetach()
+        mViewWeakReference?.apply {
+            val oldView = get()
+            if (oldView is IAttachOrDetachListener) {
+                oldView.onMvpDetach()
             }
-            mViewWeakReference!!.clear()
-            WeakReference(view)
+            clear()
         }
+        mViewWeakReference = WeakReference(view)
+
         if (view is LifecycleOwner) {
-            (view as LifecycleOwner).lifecycle.addObserver(this)
+            view.lifecycle.addObserver(this)
         }
         if (view is IAttachOrDetachListener) {
-            (view as IAttachOrDetachListener).onMvpAttach()
+            view.onMvpAttach()
         }
         if (model is IAttachOrDetachListener) {
             (model as IAttachOrDetachListener).onMvpAttach()
@@ -52,18 +51,19 @@ abstract class BasePresenter<V : IView?, M : IModel?> : IPresenter<V, M> {
     }
 
     override fun detach() {
-        if (mViewWeakReference != null) {
-            if (view != null && view is IAttachOrDetachListener) {
-                (view as IAttachOrDetachListener?)!!.onMvpDetach()
+        mViewWeakReference?.let {
+            val view: V? = it.get()
+            if (view is IAttachOrDetachListener) {
+                view.onMvpDetach()
             }
-            mViewWeakReference!!.clear()
-            mViewWeakReference = null
         }
-        if (mModel != null) {
-            if (mModel is IAttachOrDetachListener) {
-                (mModel as IAttachOrDetachListener).onMvpDetach()
+        mViewWeakReference = null
+
+        mModel?.let {
+            if (it is IAttachOrDetachListener) {
+                it.onMvpDetach()
             }
-            mModel = null
         }
+        mModel = null
     }
 }

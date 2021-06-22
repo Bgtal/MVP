@@ -12,4 +12,6 @@ package blq.ssnb.mvp
  * ================================================
 </pre> *
  */
-interface IModel 
+interface IModel
+
+interface ILifecycleModel : IModel, IAttachOrDetachListener
